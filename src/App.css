@@ -1,0 +1,71 @@
+header {
+    display: flex;
+    padding: 1.5rem 2rem;
+    justify-content: space-between;
+}
+
+nav {
+    display: flex;
+    gap: 1rem;
+    color: var(--primary-gray);
+}
+
+nav a {
+    color: var(--primary-gray);
+}
+
+nav > *:hover {
+    color: black;
+}
+
+a {
+    text-decoration: none;
+}
+
+.selected {
+    border-bottom: 1px solid hotpink;
+    color: black;
+    font-weight: 500;
+}
+
+.selected.cart {
+    color: hotpink;
+    border: none;
+}
+
+.cart {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.25rem;
+    color: black;
+    padding-bottom: 0.5rem;
+}
+
+.cart-text {
+    padding-top: 0.2rem;
+}
+
+.cart-icon {
+    width: 1rem;
+    /* padding-bottom: 0.2rem; */
+}
+
+main {
+    min-height: 70vh;
+}
+
+.brand {
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    color: black;
+}
+
+/* Footer */
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 2rem;
+}

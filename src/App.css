@@ -18,6 +18,11 @@ nav {
     display: flex;
     gap: 1rem;
     color: var(--primary-white);
+    align-items: center;
+}
+
+nav > * {
+    padding: 0.5rem;
 }
 
 nav a {
@@ -52,10 +57,12 @@ a {
 
 .cart {
     display: flex;
-    align-items: flex-start;
+    align-items: flex-end;
+    justify-content: flex-end;
     gap: 0.3rem;
     color: var(--primary-white);
     padding-bottom: 0.5rem;
+    width: 9rem;
 }
 
 .cart-icon {

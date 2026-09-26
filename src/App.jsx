@@ -48,11 +48,11 @@ function Header() {
         </NavLink>
       </nav>
 
-        <NavLink to="cart" 
-        className={({ isActive }) => isActive ? "selected cart": "cart"}>
-          <ShoppingBagIcon className='cart-icon'/>
-          <div className='cart-text'>Cart</div>
-        </NavLink>
+      <NavLink to="cart" 
+      className={({ isActive }) => isActive ? "selected cart": "cart"}>
+        <ShoppingBagIcon className='cart-icon'/>
+        <div className='cart-text'>Cart</div>
+      </NavLink>
     </header>
   )
 }

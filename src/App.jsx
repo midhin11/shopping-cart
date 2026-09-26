@@ -61,7 +61,7 @@ function Header() {
 function Footer() {
   return (
     <footer>
-      <p>GAMEVAULT.</p>
+      <p className='footer-brand'>GAMEVAULT.</p>
       <p>Curated worlds for your next great session.</p>
       <p>© 2024 GameVault Studio</p>
     </footer>

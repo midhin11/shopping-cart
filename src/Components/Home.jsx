@@ -127,7 +127,7 @@ export default function Home() {
                                 <p>RPG . SHOOTING</p>
                                 <h3>Far Cry New Dawn</h3>
                             </div>
-                            <strong>$29.99</strong>
+                            <strong>$19.99</strong>
                         </div>
                     </Link>
                     <Link to="all-games" className="featured-card">
@@ -137,7 +137,7 @@ export default function Home() {
                                 <p>SCI-FI . STRATEGY</p>
                                 <h3>Wildwood</h3>
                             </div>
-                            <strong>$29.99</strong>
+                            <strong>$14.99</strong>
                         </div>
                     </Link>
                 </div>

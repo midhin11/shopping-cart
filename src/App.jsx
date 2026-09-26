@@ -1,7 +1,7 @@
 import { createContext, useState } from 'react'
 import { Outlet, NavLink, Link } from 'react-router';
 import { ShoppingBagIcon } from 'lucide-react';
-import './App.css'
+import './App.css';
 
 const MainSecContext = createContext({
   mainSec: "home",

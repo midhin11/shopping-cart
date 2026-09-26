@@ -1,6 +1,6 @@
 import { createContext, useState } from 'react'
 import { Outlet, NavLink, Link } from 'react-router';
-import { ShoppingBagIcon } from 'lucide-react';
+import { ExternalLink, ShoppingBagIcon } from 'lucide-react';
 import './App.css';
 
 const MainSecContext = createContext({
@@ -62,8 +62,17 @@ function Footer() {
   return (
     <footer>
       <p className='footer-brand'>GAMEVAULT.</p>
-      <p>Curated worlds for your next great session.</p>
-      <p>© 2024 GameVault Studio</p>
+      <p>© 2026 GameVault Studio</p>
+      <div className='info'>
+        <a href="https://github.com/midhin11/memory-card">
+          <div>Github</div> 
+          <ExternalLink className='external'/>
+        </a>
+        <a href="https://www.linkedin.com/in/midhin-lal/">
+          <div>LinkdIn</div> 
+          <ExternalLink className='external'/>
+        </a>
+      </div>
     </footer>
   )
 }

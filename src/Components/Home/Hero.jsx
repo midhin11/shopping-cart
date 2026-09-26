@@ -8,10 +8,12 @@ export default function Hero() {
                 <div className="eyebrow">Enter the vault</div>
                 <h1>Play beyond <em>the signal</em></h1>
                 <div className="hero-desc">A hand-picked archive of worlds worth getting lost in. Find your next obsession, then disappear into it.</div>
-                <Link to="all-games" className="hero-btn">
-                    <div>Browse the vault</div>
-                    <ArrowRight className="arrow-right" />
-                </Link>
+                <div className="hero-btn-container">
+                    <Link to="all-games" className="hero-btn">
+                        <div>Browse the vault</div>
+                        <ArrowRight className="arrow-right" />
+                    </Link>
+                </div>
                 <div className="hero-meta">
                     <Radio className="radio-icon"/>
                     <div>6,921 players online</div>

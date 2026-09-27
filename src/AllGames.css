@@ -6,6 +6,7 @@
     margin: 0 auto;
     padding: 3.5rem 2rem 6rem;
     border-right: 1px solid #132733;
+    box-shadow: 0 4px 6px -1px rgba(96, 196, 209, 0.2), 0 2px 4px -2px rgba(96, 196, 209, 0.1);
 }
 
 /* ---------- SHOP HEADER ---------- */
@@ -200,4 +201,18 @@ input {
     width: 1rem;
 }
 
+@media (max-width: 500px) {
+    .game-shop {
+        padding: 1.5rem 1rem 4rem;
+    }
 
+    .shop-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+}

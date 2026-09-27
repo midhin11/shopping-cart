@@ -11,7 +11,7 @@ export default function Cart() {
                     <h1 className="cart-h1">YOUR <em>CART.</em></h1>
                     <div className="cart-subtitle">Review your games before checkout.</div>
                 </div>
-                <Link to="all-games" className="continue-btn">
+                <Link to="/all-games" className="continue-btn">
                     <ArrowLeft className="arrow-left"/>
                     <div>Continue Shopping</div>
                 </Link>
@@ -24,7 +24,7 @@ export default function Cart() {
                 <div className="empty-eyebrow">NO GAMES YET</div>
                 <h2 className="empty-h2">YOUR CART IS EMPTY.</h2>
                 <p>Add some games to get started.</p>
-                <Link to="all-games" className="empty-btn-container">
+                <Link to="/all-games" className="empty-btn-container">
                     <button className="empty-btn">
                         <div>Browse Games</div>
                         <ArrowRight className="arrow-right"/>

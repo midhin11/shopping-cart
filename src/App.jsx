@@ -4,22 +4,13 @@ import { ExternalLink, ShoppingBagIcon } from 'lucide-react';
 import './App.css';
 
 const MainSecContext = createContext({
-  mainSec: "home",
-  handleMainSec: () => {},
+  cartItems: []
 })
 
 export default function App() {
-  const [mainSec, setMainSec] = useState("home") 
-  function handleMainSec(e) {
-    if(e.target.value === "Discover" || e.target.value === "GameVault") {
-      setMainSec("home")
-    }
-    if(e.target.value === "All Games") {
-      setMainSec("all-games")
-    }
-  }
+  const [cartItems, setCartItems] = useState(0)
 
-  return (<MainSecContext value={{mainSec, handleMainSec}}>
+  return (<MainSecContext value={{ cartItems, setCartItems }}>
     <Header />
     <main>
       <Outlet />
@@ -30,7 +21,6 @@ export default function App() {
 
 
 function Header() {
-  // const {mainSec} = useContext(MainSecContext)
 
   return (
     <header>

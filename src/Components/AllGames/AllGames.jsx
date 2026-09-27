@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import '../AllGames.css'
-import ShopHead from './Home/ShopHead';
+import ShopHead from './ShopHead';
 import { Minus, Plus, ShoppingBagIcon } from 'lucide-react';
 
 function generatePrice() {

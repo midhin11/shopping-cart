@@ -1,11 +1,11 @@
-import { ArrowLeft, ArrowRight, Radio } from "lucide-react"
+import { ArrowLeft, ArrowRight, Radio, Trash2 } from "lucide-react"
 import "../Cart.css"
 import { Link } from "react-router"
 import { useContext } from "react"
 import { MainSecContext } from "../App"
 
 export default function Cart() {
-    const { cartItems } = useContext(MainSecContext);
+    const { cartItems, setCartItems } = useContext(MainSecContext);
 
     return (
         <div className="cart-page">
@@ -37,33 +37,56 @@ export default function Cart() {
             </section>
             
             : <section className="cart-layout">
-                <div className="cart-items">
-                    <div className="cart-item">
-
-                    </div>
-                    <div className="cart-item">
-                        
-                    </div>
+                <div className="cart-items">                    
+                    {cartItems.map(game => (
+                        <div className="cart-item">
+                            <div className="item-res">
+                                <div className="item-thumb">
+                                    <img src={game.image} alt="" />
+                                </div>
+                                <div className="item-details">
+                                    <div className="product-category">{game.genre}</div>
+                                    <div>{game.name }</div>
+                                    <div className="item-price">{game.price} each</div>
+                                </div>
+                            </div>
+                            <div className="item-actions">
+                                <div>{game.quantity}</div>
+                                <div className="total-price">${(game.quantity * game.price).toFixed(2)}</div>
+                                <button className="trash-btn">
+                                    <Trash2 className="cart-trash"/>
+                                </button>
+                            </div>
+                        </div>
+                    ))}
                 </div>
+
                 <div className="summary">
                     <p className="summary-header">Order summary</p>
-                    <div>
+                    <div className="summary-row">
                         <div>Items</div>
                         <div>100</div>
                     </div>
-                    <div>
+                    <div className="summary-row">
                         <div>Subtotal</div>
                         <div className="val">$490</div>
                     </div>
-                    <div>
+                    <div className="summary-row">
                         <div>Shipping</div>
                         <div className="val">Free</div>
                     </div>
+                    <div className="summary-total">
+                        <div>Total</div>
+                        <div>$490</div>
+                    </div>
+                    <button className="checkout-btn" onClick={() => setCartItems([])}>
+                        <div>Checkout</div>
+                        <ArrowRight className="arrow-right"/>
+                    </button>
+                    <div className="summary-note">Instant digital delivery after checkout</div>
                 </div>
             </section>
-            }
-
-            
+            } 
         </div>
     )
 }

@@ -3,15 +3,15 @@ import { Outlet, NavLink, Link } from 'react-router';
 import { ExternalLink, ShoppingBagIcon } from 'lucide-react';
 import './App.css';
 
-const MainSecContext = createContext({
+export const MainSecContext = createContext({
   cartItems: []
 })
 
 export default function App() {
-  const [cartItems, setCartItems] = useState(0)
+  const [cartItems, setCartItems] = useState([])
 
   return (<MainSecContext value={{ cartItems, setCartItems }}>
-    <Header />
+    <Header cartItems={cartItems}/>
     <main>
       <Outlet />
     </main>
@@ -20,13 +20,14 @@ export default function App() {
 }
 
 
-function Header() {
+function Header({ cartItems }) {
 
   return (
     <header>
       <Link to="/" className='brand'>
         GameVault
       </Link>
+
       <nav>
         <NavLink to="/"
           className={({ isActive }) => isActive ? "selected": ""}>
@@ -42,6 +43,11 @@ function Header() {
       className={({ isActive }) => isActive ? "selected cart": "cart"}>
         <ShoppingBagIcon className='cart-icon'/>
         <div className='cart-text'>Cart</div>
+        {cartItems.length > 0 && 
+          <div className='cart-count'>
+            {cartItems.reduce((total, game) => total + game.quantity, 0)}
+          </div>
+        }
       </NavLink>
     </header>
   )

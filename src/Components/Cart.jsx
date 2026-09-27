@@ -1,8 +1,12 @@
 import { ArrowLeft, ArrowRight, Radio } from "lucide-react"
 import "../Cart.css"
 import { Link } from "react-router"
+import { useContext } from "react"
+import { MainSecContext } from "../App"
 
 export default function Cart() {
+    const { cartItems } = useContext(MainSecContext);
+
     return (
         <div className="cart-page">
             <section className="cart-header">
@@ -17,7 +21,7 @@ export default function Cart() {
                 </Link>
             </section>
 
-            <section className="empty-cart">
+            {cartItems.length === 0 ? <section className="empty-cart">
                 <div className="empty-icon">
                     <Radio />
                 </div>
@@ -31,6 +35,35 @@ export default function Cart() {
                     </button>
                 </Link>
             </section>
+            
+            : <section className="cart-layout">
+                <div className="cart-items">
+                    <div className="cart-item">
+
+                    </div>
+                    <div className="cart-item">
+                        
+                    </div>
+                </div>
+                <div className="summary">
+                    <p className="summary-header">Order summary</p>
+                    <div>
+                        <div>Items</div>
+                        <div>100</div>
+                    </div>
+                    <div>
+                        <div>Subtotal</div>
+                        <div className="val">$490</div>
+                    </div>
+                    <div>
+                        <div>Shipping</div>
+                        <div className="val">Free</div>
+                    </div>
+                </div>
+            </section>
+            }
+
+            
         </div>
     )
 }

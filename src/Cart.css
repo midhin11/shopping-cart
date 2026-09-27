@@ -121,6 +121,26 @@
     color: var(--dark-bg);
 }
 
+/* ---------- CART LAYOUT ---------- */
+
+.summary {
+    padding: 2rem;
+    background-color: #101923;
+    border: 1px solid #365361;
+    max-width: 20rem;
+} 
+
+.summary > div {
+    display: flex;
+    justify-content: space-between;
+    color: var(--gray-text)
+}
+
+.val {
+    color: var(--primary-white);
+    font-weight: 500;
+}
+
 @media (max-width: 500px) {
     .cart-page {
         padding: 1.5rem 1rem 4rem;

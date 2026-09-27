@@ -11,11 +11,9 @@ export default function Cart() {
                     <h1 className="cart-h1">YOUR <em>CART.</em></h1>
                     <div className="cart-subtitle">Review your games before checkout.</div>
                 </div>
-                <Link to="all-games" className="continue-btn-container">
-                    <button className="continue-btn">
-                        <ArrowLeft className="arrow-left"/>
-                        <div>Continue Shopping</div>
-                    </button>
+                <Link to="all-games" className="continue-btn">
+                    <ArrowLeft className="arrow-left"/>
+                    <div>Continue Shopping</div>
                 </Link>
             </section>
 

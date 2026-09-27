@@ -44,6 +44,16 @@
     border: none;
 }
 
+.continue-btn:hover {
+    text-shadow: 0 0 6px rgba(96, 196, 209, 0.7),
+                0 0 14px rgba(96, 196, 209, 0.4);
+}
+
+.continue-btn:hover .arrow-left {
+    filter: drop-shadow(0 0 4px rgba(96, 196, 209, 0.7))
+            drop-shadow(0 0 10px rgba(96, 196, 209, 0.4));
+}
+
 .arrow-left {
     width: 1rem;
 }
@@ -100,4 +110,12 @@
     box-shadow: 0 0 16px #65cbd225;
     display: flex;
     padding: 0.9rem 1.4rem;
+    transition: transform 0.3s ease-in-out;
+}
+
+.empty-btn:hover {
+    background-color: var(--blue-text);
+    border: 1px solid transparent;
+    transform: translateY(-3px);
+    color: var(--dark-bg);
 }

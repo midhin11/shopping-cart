@@ -1,8 +1,8 @@
-import Hero from "./Home/Hero";
-import Principles from "./Home/Principles";
-import Featured from "./Home/Featured";
-import Pick from "./Home/Pick";
-import Slider from "./Home/Slider";
+import Hero from "./Hero";
+import Principles from "./Principles";
+import Featured from "./Featured";
+import Pick from "./Pick";
+import Slider from "./Slider";
 import "../Home.css";
 
 export default function Home() {

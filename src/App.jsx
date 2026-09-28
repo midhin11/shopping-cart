@@ -9,8 +9,12 @@ export const MainSecContext = createContext({
 
 export default function App() {
   const [cartItems, setCartItems] = useState([])
+  function removeCartItems(id) {
+    let newCartItems = cartItems.filter(item => item.id !== id)
+    setCartItems(newCartItems) 
+  }
 
-  return (<MainSecContext value={{ cartItems, setCartItems }}>
+  return (<MainSecContext value={{ cartItems, setCartItems, removeCartItems }}>
     <Header cartItems={cartItems}/>
     <main>
       <Outlet />
@@ -21,7 +25,6 @@ export default function App() {
 
 
 function Header({ cartItems }) {
-
   return (
     <header>
       <Link to="/" className='brand'>
@@ -52,7 +55,6 @@ function Header({ cartItems }) {
     </header>
   )
 }
-
 
 function Footer() {
   return (

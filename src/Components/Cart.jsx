@@ -5,7 +5,9 @@ import { useContext } from "react"
 import { MainSecContext } from "../App"
 
 export default function Cart() {
-    const { cartItems, setCartItems } = useContext(MainSecContext);
+    const { cartItems, setCartItems, removeCartItems } = useContext(MainSecContext);
+    const cartQuantity = (cartItems.reduce((total, game) => total + game.quantity, 0).toFixed(2))
+    const cartPrice = (cartItems.reduce((total, game) => total + (game.price * game.quantity), 0)).toFixed(2)
 
     return (
         <div className="cart-page">
@@ -53,7 +55,9 @@ export default function Cart() {
                             <div className="item-actions">
                                 <div>{game.quantity}</div>
                                 <div className="total-price">${(game.quantity * game.price).toFixed(2)}</div>
-                                <button className="trash-btn">
+                                <button 
+                                className="trash-btn"
+                                onClick={() => removeCartItems(game.id)}>
                                     <Trash2 className="cart-trash"/>
                                 </button>
                             </div>
@@ -65,11 +69,11 @@ export default function Cart() {
                     <p className="summary-header">Order summary</p>
                     <div className="summary-row">
                         <div>Items</div>
-                        <div>100</div>
+                        <div>{cartQuantity}</div>
                     </div>
                     <div className="summary-row">
                         <div>Subtotal</div>
-                        <div className="val">$490</div>
+                        <div className="val">${cartPrice}</div>
                     </div>
                     <div className="summary-row">
                         <div>Shipping</div>
@@ -77,7 +81,7 @@ export default function Cart() {
                     </div>
                     <div className="summary-total">
                         <div>Total</div>
-                        <div>$490</div>
+                        <div>${cartPrice}</div>
                     </div>
                     <button className="checkout-btn" onClick={() => setCartItems([])}>
                         <div>Checkout</div>

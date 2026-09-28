@@ -3,9 +3,7 @@ import { useContext } from "react"
 import { MainSecContext } from "../../App"
 
 export default function GamesGrid({ games, setGames }) {
-    // const [inputVal, setInputVal] = useState('')
     const { cartItems, setCartItems } = useContext(MainSecContext)
-    console.log(cartItems)
 
     function addtoCart(game) {
         let isDuplicate = cartItems.some(currGame => currGame.id === game.id)
@@ -23,6 +21,16 @@ export default function GamesGrid({ games, setGames }) {
         }
     }
 
+    function changeQuantity(game, amount) {
+        setGames(prevGames =>
+            prevGames.map(g => {
+                if (g.id === g.id) 
+                    return {...g, quantity: g.quantity+amount}
+                else return g
+            })
+        )
+    }
+
     return (<div className="product-grid">
         {games.map((game, index) => (
             <article key={index} className="product-card">
@@ -38,7 +46,7 @@ export default function GamesGrid({ games, setGames }) {
                 </div>
                 <div className="product-actions">
                     <div className="quantity-ctrl">
-                        <Minus className='minus'/>
+                        <Minus className='minus' onClick={() => changeQuantity(game, -1)}/>
                         <input 
                             type="number" 
                             value={game?.quantity} 
@@ -53,7 +61,7 @@ export default function GamesGrid({ games, setGames }) {
                                 )
                             }}
                         />
-                        <Plus className='plus'/>
+                        <Plus className='plus' onClick={() => changeQuantity(game, +1)}/>
                     </div>
                     <button 
                         className="add-btn"

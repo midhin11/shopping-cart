@@ -22,10 +22,14 @@ export default function GamesGrid({ games, setGames }) {
     }
 
     function changeQuantity(game, amount) {
+        const increase = amount === 1 ? true : false 
         setGames(prevGames =>
             prevGames.map(g => {
-                if (g.id === g.id) 
-                    return {...g, quantity: g.quantity+amount}
+                if (g.id === game.id) {
+                    if (game.quantity <= 1 && !increase  || 
+                        game.quantity >= 3 && increase) return g
+                    else return {...g, quantity: g.quantity+amount}
+                }
                 else return g
             })
         )
@@ -51,15 +55,7 @@ export default function GamesGrid({ games, setGames }) {
                             type="number" 
                             value={game?.quantity} 
                             min="1" 
-                            max="5"
-                            onChange={(e) => {
-                                const newQUantity = Number(e.target.value)
-                                setGames(prevGames => 
-                                    prevGames.map(g => 
-                                        g.id === game.id ? {...g, quantity: newQUantity} : g
-                                    )
-                                )
-                            }}
+                            max="3"
                         />
                         <Plus className='plus' onClick={() => changeQuantity(game, +1)}/>
                     </div>

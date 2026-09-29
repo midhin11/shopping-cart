@@ -10,9 +10,9 @@ export default function Pick() {
             </div>
             <div className="pick-note">
                 <Gamepad2 className="gamepad"/>
-                <div>From late-night co-op to five-minute escapes, the best game is the one that meets you where you are.</div>
+                <div>From quick sessions to late-night adventures, find something that fits your mood.</div>
                 <Link to="all-games" className="pick-btn">
-                    <div>Browse the Vault</div>
+                    <div>Browse all games</div>
                     <ArrowRight className="arrow-right" />
                 </Link>
             </div>

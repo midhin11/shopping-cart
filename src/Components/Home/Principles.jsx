@@ -6,22 +6,22 @@ export default function Principles() {
             <div className="principle">
                 <Crosshair className="principle-icon"/>
                 <div>
-                    <div className="principle-head">Find your next world</div>
-                    <div>Curated releases, cult classics, and strange new places to explore.</div>
+                    <div className="principle-head">Find your next game</div>
+                    <div>Brand new releases, old favorites, and plenty of worlds to explore.</div>
                 </div>
             </div>
             <div className="principle">
                 <Headphones className="principle-icon"/>
                 <div>
                     <div className="principle-head">Play your way</div>
-                    <div>Digital adventures for console, PC, and wherever you play.</div>
+                    <div>Pick up something for PC, console, or wherever you like to play.</div>
                 </div>
             </div>
             <div className="principle">
                 <Trophy className="principle-icon"/>
                 <div>
                     <div className="principle-head">Worth the hype</div>
-                    <div>The games people are still talking about after the credits roll.</div>
+                    <div>Games people are still talking about long after they've finished them.</div>
                 </div>
             </div>
         </section>

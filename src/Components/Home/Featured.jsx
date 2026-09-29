@@ -4,11 +4,11 @@ import { ArrowRight } from "lucide-react"
 export default function Featured() {
     return (
         <section className="featured">
-            <div className="eyebrow">Vault access // latest</div>
+            <div className="eyebrow">Gamevault // LATEST PICKS</div>
             <div className="featured-top">
-                <h2>Featured <em>signals.</em></h2>
+                <h2>Featured <em>games.</em></h2>
                 <Link to="all-games" className="featured-btn">
-                    <div>Open the full vault</div> 
+                    <div>See all games</div> 
                     <ArrowRight className="arrow-right"/>
                 </Link>
             </div>

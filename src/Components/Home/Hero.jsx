@@ -7,10 +7,10 @@ export default function Hero() {
             <div className="hero-copy">
                 <div className="eyebrow">Enter the vault</div>
                 <h1>Play beyond <em>the signal</em></h1>
-                <div className="hero-desc">A hand-picked archive of worlds worth getting lost in. Find your next obsession, then disappear into it.</div>
+                <div className="hero-desc">Discover something worth playing. From new releases to old favorites, find your next game here.</div>
                 <div className="hero-btn-container">
                     <Link to="all-games" className="hero-btn">
-                        <div>Browse the vault</div>
+                        <div>Browse games</div>
                         <ArrowRight className="arrow-right" />
                     </Link>
                 </div>

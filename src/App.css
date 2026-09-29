@@ -61,7 +61,7 @@ a {
 
 .cart {
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     justify-content: flex-end;
     gap: 0.3rem;
     color: var(--primary-white);
@@ -137,7 +137,7 @@ footer {
 
 @media (max-width: 900px) {
     header {
-        padding: 1.25rem 1.5rem;
+        padding: 1rem 1.5rem;
         flex-wrap: wrap;
         justify-content: center;
     }

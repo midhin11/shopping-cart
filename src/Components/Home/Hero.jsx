@@ -21,7 +21,7 @@ export default function Hero() {
             </div>
 
             <div className="hero-art">
-                <img src="public/hero-art.avif" alt="" />
+                <img src="../../../public/hero-art.avif" alt="" />
                 <div className="hud-top">
                     <div>SECTOR 7</div>
                     <div>48.8584° N</div>

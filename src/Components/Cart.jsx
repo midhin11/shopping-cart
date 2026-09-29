@@ -2,10 +2,10 @@ import { ArrowLeft, ArrowRight, Radio, Trash2 } from "lucide-react"
 import "../Cart.css"
 import { Link } from "react-router"
 import { useContext } from "react"
-import { MainSecContext } from "../App"
+import CartContext from "../CartContext";
 
 export default function Cart() {
-    const { cartItems, setCartItems, removeCartItems } = useContext(MainSecContext);
+    const { cartItems, setCartItems, removeCartItems } = useContext(CartContext);
     const cartQuantity = (cartItems.reduce((total, game) => total + game.quantity, 0).toFixed(2))
     const cartPrice = (cartItems.reduce((total, game) => total + (game.price * game.quantity), 0)).toFixed(2)
 

@@ -1,6 +1,6 @@
 import { Minus, Plus, ShoppingBagIcon } from "lucide-react"
 import { useContext } from "react"
-import { CartContext } from "../../App"
+import CartContext from "../../CartContext.js"
 
 export default function GamesGrid({ games, setGames }) {
     const { cartItems, setCartItems } = useContext(CartContext)

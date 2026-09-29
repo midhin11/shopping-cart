@@ -1,11 +1,8 @@
-import { createContext, useState } from 'react'
+import { useState } from 'react'
 import { Outlet, NavLink, Link } from 'react-router';
 import { ExternalLink, ShoppingBagIcon } from 'lucide-react';
 import './App.css';
-
-export const MainSecContext = createContext({
-  cartItems: []
-})
+import CartContext from './CartContext.js';
 
 export default function App() {
   const [cartItems, setCartItems] = useState([])
@@ -14,13 +11,13 @@ export default function App() {
     setCartItems(newCartItems) 
   }
 
-  return (<MainSecContext value={{ cartItems, setCartItems, removeCartItems }}>
+  return (<CartContext value={{ cartItems, setCartItems, removeCartItems }}>
     <Header cartItems={cartItems}/>
     <main>
       <Outlet />
     </main>
     <Footer />
-  </MainSecContext>)
+  </CartContext>)
 }
 
 

@@ -1,23 +1,26 @@
 import { Minus, Plus, ShoppingBagIcon } from "lucide-react"
 import { useContext } from "react"
-import { MainSecContext } from "../../App"
+import { CartContext } from "../../App"
 
 export default function GamesGrid({ games, setGames }) {
-    const { cartItems, setCartItems } = useContext(MainSecContext)
+    const { cartItems, setCartItems } = useContext(CartContext)
 
     function addtoCart(game) {
         let isDuplicate = cartItems.some(currGame => currGame.id === game.id)
         if (!isDuplicate) setCartItems(prevGames => [...prevGames, game]);
         else {
             let dupliGame = cartItems.find(currGame => currGame.id === game.id)
-            let additional = game.quantity
-            setCartItems(prevGames => 
-                prevGames.map(g => {
-                    if (g.id === dupliGame.id) 
-                        return {...g, quantity: g.quantity + additional};
-                    else return g;
-                })
-            )
+            if (dupliGame.quantity + game.quantity > 3) return
+            else {
+                let additional = game.quantity
+                setCartItems(prevGames => 
+                    prevGames.map(g => {
+                        if (g.id === dupliGame.id) 
+                            return {...g, quantity: g.quantity + additional};
+                        else return g;
+                    })
+                )
+            }
         }
     }
 

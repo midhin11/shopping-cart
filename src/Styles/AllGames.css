@@ -183,7 +183,7 @@ input[type="number"] {
 
 .minus, .plus {
     color: var(--blue-text);
-    width: 1rem;
+    width: 1.2rem;
 }
 
 .add-btn {

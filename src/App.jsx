@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Outlet, NavLink, Link } from 'react-router';
 import { ExternalLink, ShoppingBagIcon } from 'lucide-react';
-import './App.css';
+import './Styles/App.css';
 import CartContext from './CartContext.js';
 
 export default function App() {
@@ -59,11 +59,11 @@ function Footer() {
       <p className='footer-brand'>GAMEVAULT.</p>
       <p>© 2026 GameVault Studio</p>
       <div className='info'>
-        <a href="https://github.com/midhin11/memory-card">
+        <a href="https://github.com/midhin11/shopping-cart" target='_blank'>
           <div>Github</div> 
           <ExternalLink className='external'/>
         </a>
-        <a href="https://www.linkedin.com/in/midhin-lal/">
+        <a href="https://www.linkedin.com/in/midhin-lal/" target='_blank'>
           <div>LinkdIn</div> 
           <ExternalLink className='external'/>
         </a>

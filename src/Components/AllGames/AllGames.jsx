@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import '../../AllGames.css'
+import '../../Styles/AllGames.css'
 import ShopHead from './ShopHead';
 import GamesGrid from './GamesGrid';
 

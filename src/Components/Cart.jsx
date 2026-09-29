@@ -1,13 +1,17 @@
 import { ArrowLeft, ArrowRight, Radio, Trash2 } from "lucide-react"
-import "../Cart.css"
+import "../Styles/Cart.css"
 import { Link } from "react-router"
-import { useContext } from "react"
+import { useContext, useEffect } from "react"
 import CartContext from "../CartContext";
 
 export default function Cart() {
     const { cartItems, setCartItems, removeCartItems } = useContext(CartContext);
     const cartQuantity = (cartItems.reduce((total, game) => total + game.quantity, 0).toFixed(2))
     const cartPrice = (cartItems.reduce((total, game) => total + (game.price * game.quantity), 0)).toFixed(2)
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
 
     return (
         <div className="cart-page">
@@ -41,7 +45,7 @@ export default function Cart() {
             : <section className="cart-layout">
                 <div className="cart-items">                    
                     {cartItems.map(game => (
-                        <div className="cart-item">
+                        <div className="cart-item" key={game.id}>
                             <div className="item-res">
                                 <div className="item-thumb">
                                     <img src={game.image} alt="" />

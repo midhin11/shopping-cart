@@ -55,10 +55,6 @@
 
 /* ---------- HERO ---------- */
 
-main {
-    /* min-height: 70vh; */
-}
-
 .hero {
     display: grid;
     grid-template-columns: 1fr 1fr;

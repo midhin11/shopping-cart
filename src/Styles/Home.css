@@ -430,5 +430,9 @@ strong {
     .gamepad {
         margin: 1rem auto;
     }
+
+    .slider {
+        margin: 2rem 2rem 0;
+    }
     
 }

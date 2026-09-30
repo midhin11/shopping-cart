@@ -220,7 +220,7 @@ h1 em {
 /* ---------- PRINCIPLES ---------- */
 
 .principles {
-    background-color: #0b1119cc;
+    background-color: var(--deep-blue);
     padding: 2rem 5rem;
     color: var(--gray-text);
     display: grid;
@@ -398,15 +398,18 @@ strong {
 
     .featured {
         padding: 2rem;
+        text-align: center;
     }
 
     .featured-top {
-        flex-direction: column;
+        display: block;
+        align-items: center;
+        margin-bottom: 1.5rem;
     }
 
     .featured-btn {
-        align-self: flex-start;
         margin-top: 0.5rem;
+        display: inline-flex;
     }
 
     .featured-grid {
@@ -428,11 +431,18 @@ strong {
     }
 
     .gamepad {
-        margin: 1rem auto;
+        margin: 0.75rem auto 0.5rem;
+    }
+
+    .pick-btn {
+        margin-top: 0.6rem;
     }
 
     .slider {
         margin: 2rem 2rem 0;
     }
     
+    .slider-header {
+        font-size: 1.2rem;
+    }
 }

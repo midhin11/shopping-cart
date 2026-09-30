@@ -145,12 +145,11 @@ footer {
     .brand {
         width: 100%;
         text-align: center;
-        margin-bottom: 0.75rem;
+        margin-bottom: 0.5rem;
     }
 
     nav {
         flex: 1;
-        /* justify-content: space-evenly; */
     }
 
     .cart {

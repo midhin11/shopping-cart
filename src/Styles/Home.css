@@ -310,6 +310,10 @@ h2 em {
     justify-content: space-between;
 }
 
+.featured-card-copy > div {
+    text-align: left;
+}
+
 h3 {
     font-weight: 400;
 }

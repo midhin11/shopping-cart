@@ -4,6 +4,10 @@ A dark, futuristic game store built with React.
 
 GameVault lets users browse games, adjust quantities, add them to a cart, and review their order before checkout.
 
+## Live Demo
+
+[GameVault](https://gamevault-shopping.vercel.app/all-games)
+
 ## Features
 
 - Browse games fetched from the RAWG API

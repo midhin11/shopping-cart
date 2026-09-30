@@ -12,7 +12,7 @@ GameVault lets users browse games, adjust quantities, add them to a cart, and re
 - Increase/decrease quantities
 - Remove items from the cart
 - Automatic cart totals
-- Persistent game data using localStorage
+- Persistent game data using localStorage to save API calls
 - Responsive layout
 - React Router navigation
 
@@ -20,6 +20,7 @@ GameVault lets users browse games, adjust quantities, add them to a cart, and re
 
 - React
 - React Router
+- React Context API
 - Vite
 - CSS
 - Lucide React
@@ -30,5 +31,5 @@ GameVault lets users browse games, adjust quantities, add them to a cart, and re
 Clone the repository:
 
 ```bash
-git clone <your-repository-url>
+git clone [text](https://github.com/midhin11/shopping-cart)
 cd <project-folder>

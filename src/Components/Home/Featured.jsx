@@ -14,7 +14,7 @@ export default function Featured() {
             </div>
             <div className="featured-grid">
                 <Link to="all-games" className="featured-card">
-                    <img src="../../../public/dummy1.avif" alt="game-art" className="featured-img" />
+                    <img src="/dummy1.avif" alt="game-art" className="featured-img" />
                     <div className="featured-card-copy">
                         <div>
                             <p>ACTION . ADVENTURE</p>
@@ -24,7 +24,7 @@ export default function Featured() {
                     </div>
                 </Link>
                 <Link to="all-games" className="featured-card">
-                    <img src="../../../public/dummy2.jpg" alt="game-art" className="featured-img" />
+                    <img src="/dummy2.jpg" alt="game-art" className="featured-img" />
                     <div className="featured-card-copy">
                         <div>
                             <p>RPG . SHOOTING</p>
@@ -34,7 +34,7 @@ export default function Featured() {
                     </div>
                 </Link>
                 <Link to="all-games" className="featured-card">
-                    <img src="../../../public/dummy3.jpg" alt="game-art" className="featured-img" />
+                    <img src="/dummy3.jpg" alt="game-art" className="featured-img" />
                     <div className="featured-card-copy">
                         <div>
                             <p>SCI-FI . STRATEGY</p>

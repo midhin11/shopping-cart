@@ -6,7 +6,7 @@ GameVault lets users browse games, adjust quantities, add them to a cart, and re
 
 ## Live Demo
 
-[GameVault](https://gamevault-shopping.vercel.app/all-games)
+[GameVault](https://gamevault-shopping.vercel.app/
 
 ## Features
 

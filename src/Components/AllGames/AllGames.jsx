@@ -55,7 +55,6 @@ export default function AllGames() {
 
                 <GamesGrid games={games} setGames={setGames} />
             </section>
-
         </div>
     )
 }

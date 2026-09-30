@@ -12,33 +12,37 @@ export default function AllGames() {
 
     const [games, setGames] = useState([]   )
     useEffect(() => {
-            async function fetchData() {
-                const cachedGames = localStorage.getItem('games');
-                if (cachedGames) {
-                    setGames(JSON.parse(cachedGames));
-                    return;
-                }
-
-                const response = await fetch('https://api.rawg.io/api/games?key=ee1b550c2217457a8e6f14b7d2aa4b5e&page_size=9&ordering=-added')
-                const data = await response.json();
-
-                const gamesList = data.results.map(game => ({
-                    name: game.name,
-                    image: game.background_image,
-                    genre: game.genres.length > 1
-                        ? `${game.genres[0].name} . ${game.genres[1].name}`
-                        : game.genres[0].name,
-                    id: game.id,    
-                    price: generatePrice(),
-                    quantity: 1,
-                }));
-                console.log(data)
-                localStorage.setItem('games', JSON.stringify(gamesList));
-                setGames(gamesList)
+        async function fetchData() {
+            const cachedGames = localStorage.getItem('games');
+            if (cachedGames) {
+                setGames(JSON.parse(cachedGames));
+                return;
             }
-            
-            fetchData()
-        }, [])
+
+            const response = await fetch('https://api.rawg.io/api/games?key=ee1b550c2217457a8e6f14b7d2aa4b5e&page_size=9&ordering=-added')
+            const data = await response.json();
+
+            const gamesList = data.results.map(game => ({
+                name: game.name,
+                image: game.background_image,
+                genre: game.genres.length > 1
+                    ? `${game.genres[0].name} . ${game.genres[1].name}`
+                    : game.genres[0].name,
+                id: game.id,    
+                price: generatePrice(),
+                quantity: 1,
+            }));
+            console.log(data)
+            localStorage.setItem('games', JSON.stringify(gamesList));
+            setGames(gamesList)
+        }
+        
+        fetchData()
+    }, [])
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
 
     return (
         <div className="game-shop">

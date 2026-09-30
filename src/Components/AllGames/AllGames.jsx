@@ -10,31 +10,40 @@ function generatePrice() {
 
 export default function AllGames() {
 
-    const [games, setGames] = useState([]   )
+    const [games, setGames] = useState([])
+    const[error, setError] = useState(null)
+    const[loading, setLoading] = useState(true)
     useEffect(() => {
         async function fetchData() {
             const cachedGames = localStorage.getItem('games');
             if (cachedGames) {
                 setGames(JSON.parse(cachedGames));
+                setLoading(false)
                 return;
             }
 
-            const response = await fetch('https://api.rawg.io/api/games?key=ee1b550c2217457a8e6f14b7d2aa4b5e&page_size=9&ordering=-added')
-            const data = await response.json();
+            try {
+                const response = await fetch('https://api.rawg.io/api/games?key=ee1b550c2217457a8e6f14b7d2aa4b5e&page_size=9&ordering=-added')
+                const data = await response.json();
 
-            const gamesList = data.results.map(game => ({
-                name: game.name,
-                image: game.background_image,
-                genre: game.genres.length > 1
-                    ? `${game.genres[0].name} . ${game.genres[1].name}`
-                    : game.genres[0].name,
-                id: game.id,    
-                price: generatePrice(),
-                quantity: 1,
-            }));
-            console.log(data)
-            localStorage.setItem('games', JSON.stringify(gamesList));
-            setGames(gamesList)
+                const gamesList = data.results.map(game => ({
+                    name: game.name,
+                    image: game.background_image,
+                    genre: game.genres.length > 1
+                        ? `${game.genres[0].name} . ${game.genres[1].name}`
+                        : game.genres[0].name,
+                    id: game.id,    
+                    price: generatePrice(),
+                    quantity: 1,
+                }));
+
+                localStorage.setItem('games', JSON.stringify(gamesList));
+                setGames(gamesList)
+            } catch(error) {
+                setError(error)
+            } finally {
+                setLoading(false)
+            }
         }
         
         fetchData()
@@ -53,7 +62,9 @@ export default function AllGames() {
                     <div>Browse the vault</div>
                 </div>
 
-                <GamesGrid games={games} setGames={setGames} />
+                {loading && <div className="loading">Loading games...</div>}
+                {error && <div className='error'>Failed to load products</div>}
+                {!error && <GamesGrid games={games} setGames={setGames} />}
             </section>
         </div>
     )

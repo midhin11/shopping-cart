@@ -78,6 +78,21 @@
     font-size: 0.8rem;
 }
 
+.error {
+    color: #ff6b9d;
+    text-align: center;
+    padding: 3rem 1rem;
+    border: 1px solid #ff6b9d44;
+    background-color: #ff6b9d0a;
+}
+
+.loading {
+    text-align: center;
+    padding: 3rem 1rem;
+    color: var(--blue-text);
+    font-size: 0.9rem;
+}
+
 .product-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
